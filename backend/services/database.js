@@ -71,8 +71,8 @@ class JsonDatabase {
         logs = logs.filter(log => log.level === filters.level);
       }
       
-      if (filters.service) {
-        logs = logs.filter(log => log.service === filters.service);
+      if (filters.resourceId) {
+        logs = logs.filter(log => log.resourceId === filters.resourceId);
       }
       
       if (filters.startDate) {

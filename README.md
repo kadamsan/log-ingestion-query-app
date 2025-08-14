@@ -50,11 +50,6 @@ The core database service provides:
 - **File System Operations**: Uses `fs.promises` for async file operations
 - **Auto-directory Creation**: Creates data directory if it doesn't exist
 - **CRUD Operations**: Create, Read, Update, Delete log entries
-- **Filtering & Search**: Filter by level, service, date range, text search
-- **Pagination**: Support for paginated results
-- **Sorting**: Sort by any field in ascending/descending order
-- **Statistics**: Generate log statistics and analytics
-- **Bulk Operations**: Insert multiple logs at once
 
 ### Key Features
 
@@ -64,15 +59,6 @@ The core database service provides:
 4. **UUID Generation**: Unique IDs for each log entry
 5. **Timestamp Management**: Automatic timestamp handling
 6. **Flexible Filtering**: Multiple filter options for querying logs
-
-### File System Logic
-
-The implementation uses Node.js's built-in `fs` module with the following approach:
-
-1. **Read Operation**: `fs.readFile()` to load all logs into memory
-2. **Write Operation**: `fs.writeFile()` to persist changes back to file
-3. **Directory Management**: `fs.mkdir()` with recursive option for data directory
-4. **Error Handling**: Graceful handling of file not found scenarios
 
 ## 🔧 Configuration
 

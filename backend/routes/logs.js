@@ -7,12 +7,12 @@ const db = new JsonDatabase();
 // POST /api/logs - Ingest a new log
 router.post('/', async (req, res) => {
   try {
-    const { level, message, service, metadata, tags, source, duration, ip, userAgent, environment } = req.body;
+    const { level, message, resourceId, traceId, spanId, commit, metadata } = req.body;
 
     // Validate required fields
-    if (!level || !message) {
+    if (!level || !message || !resourceId || !traceId || !spanId || !commit) {
       return res.status(400).json({
-        error: 'Missing required fields: level and message are required'
+        error: 'Missing required field'
       });
     }
 
@@ -27,14 +27,11 @@ router.post('/', async (req, res) => {
     const logData = {
       level,
       message,
-      service,
-      metadata,
-      tags,
-      source,
-      duration,
-      ip,
-      userAgent,
-      environment
+      resourceId,
+      traceId,
+      spanId,
+      commit,
+      metadata
     };
 
     const newLog = await db.addLog(logData);
@@ -57,7 +54,7 @@ router.get('/', async (req, res) => {
   try {
     const {
       level,
-      service,
+      resourceId,
       startDate,
       endDate,
       search,
@@ -69,7 +66,7 @@ router.get('/', async (req, res) => {
 
     const filters = {
       level,
-      service,
+      resourceId,
       startDate,
       endDate,
       search,
@@ -81,7 +78,7 @@ router.get('/', async (req, res) => {
 
     const result = await db.getLogs(filters);
     
-    res.json({
+    res.status(200).json({
       success: true,
       data: result.logs,
       pagination: result.pagination

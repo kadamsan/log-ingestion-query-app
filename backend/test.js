@@ -11,13 +11,11 @@ async function testDatabase() {
     const log1 = await db.addLog({
       level: 'info',
       message: 'Application started successfully',
-      service: 'web-server',
-      metadata: { port: 3000, environment: 'development' },
-      tags: ['startup', 'web'],
-      source: 'server.js',
-      ip: '127.0.0.1',
-      userAgent: 'Mozilla/5.0',
-      environment: 'development'
+      resourceId: 'web-server',
+      traceId: 'abc-xyz-123',
+      spanId: 'span-456',
+      commit: '5e5342f',
+      metadata: { port: 3000, environment: 'development' }
     });
     console.log('✅ Log added:', log1.id);
 
@@ -26,13 +24,11 @@ async function testDatabase() {
     const log2 = await db.addLog({
       level: 'error',
       message: 'Database connection failed',
-      service: 'database',
-      metadata: { error: 'Connection timeout', retries: 3 },
-      tags: ['database', 'error'],
-      source: 'database.js',
-      duration: 5000,
-      ip: '127.0.0.1',
-      environment: 'development'
+      resourceId: 'database',
+      traceId: 'abc-xyz-124',
+      spanId: 'span-457',
+      commit: '5e5342g',
+      metadata: { error: 'Connection timeout', retries: 3 }
     });
     console.log('✅ Log added:', log2.id);
 
@@ -41,11 +37,11 @@ async function testDatabase() {
     const log3 = await db.addLog({
       level: 'warn',
       message: 'High memory usage detected',
-      service: 'monitoring',
-      metadata: { memoryUsage: '85%', threshold: '80%' },
-      tags: ['monitoring', 'performance'],
-      source: 'monitor.js',
-      environment: 'production'
+      resourceId: 'monitoring',
+      traceId: 'abc-xyz-125',
+      spanId: 'span-458',
+      commit: '5e5342h',
+      metadata: { memoryUsage: '85%', threshold: '80%' }      
     });
     console.log('✅ Log added:', log3.id);
 
@@ -88,15 +84,19 @@ async function testDatabase() {
     const bulkLogs = [
       {
         level: 'info',
-        message: 'Bulk log 1',
-        service: 'bulk-test',
-        tags: ['bulk', 'test']
+        resourceId: 'web-server',
+        traceId: 'abc-xyz-126',
+        spanId: 'span-459',
+        commit: '5e5342i',
+        metadata: { port: 3000, environment: 'development', bulk: true }
       },
       {
         level: 'debug',
-        message: 'Bulk log 2',
-        service: 'bulk-test',
-        tags: ['bulk', 'test']
+        resourceId: 'web-server',
+        traceId: 'abc-xyz-127',
+        spanId: 'span-450',
+        commit: '5e5342j',
+        metadata: { port: 3000, environment: 'development', bulk: true }
       }
     ];
     const bulkResult = await db.bulkInsert(bulkLogs);
