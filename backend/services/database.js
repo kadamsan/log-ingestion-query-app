@@ -72,7 +72,10 @@ class JsonDatabase {
       }
       
       if (filters.resourceId) {
-        logs = logs.filter(log => log.resourceId === filters.resourceId);
+        const resourceIdTerm = filters.resourceId.toLowerCase();
+        logs = logs.filter(log => 
+          log.resourceId.toLowerCase().includes(resourceIdTerm)
+        );
       }
       
       if (filters.startDate) {
@@ -86,8 +89,7 @@ class JsonDatabase {
       if (filters.search) {
         const searchTerm = filters.search.toLowerCase();
         logs = logs.filter(log => 
-          log.message.toLowerCase().includes(searchTerm) ||
-          (log.service && log.service.toLowerCase().includes(searchTerm))
+          log.message.toLowerCase().includes(searchTerm)
         );
       }
 

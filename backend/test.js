@@ -84,6 +84,7 @@ async function testDatabase() {
     const bulkLogs = [
       {
         level: 'info',
+        message: 'web-server message',
         resourceId: 'web-server',
         traceId: 'abc-xyz-126',
         spanId: 'span-459',
@@ -92,6 +93,7 @@ async function testDatabase() {
       },
       {
         level: 'debug',
+        message: 'web-server message',
         resourceId: 'web-server',
         traceId: 'abc-xyz-127',
         spanId: 'span-450',

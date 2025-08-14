@@ -1,0 +1,76 @@
+[
+  {
+    "id": "845bdf27-1304-4772-a61d-2e579a58451f",
+    "timestamp": "2025-08-11T10:51:00.387Z",
+    "level": "info",
+    "message": "Application started successfully (updated)",
+    "resourceId": "web-server",
+    "traceId": "abc-xyz-123",
+    "spanId": "span-456",
+    "commit": "5e5342f",
+    "metadata": {
+      "port": 3000,
+      "environment": "development",
+      "updated": true
+    },
+    "updatedAt": "2025-08-14T10:51:00.424Z"
+  },
+  {
+    "id": "0d5d9851-74ac-40b8-81d7-16c2fe39ecde",
+    "timestamp": "2025-08-12T10:51:00.394Z",
+    "level": "error",
+    "message": "Database connection failed",
+    "resourceId": "database",
+    "traceId": "abc-xyz-124",
+    "spanId": "span-457",
+    "commit": "5e5342g",
+    "metadata": {
+      "error": "Connection timeout",
+      "retries": 3
+    }
+  },
+  {
+    "id": "3bbe1754-97e3-49a2-b8e4-e4a4327ab905",
+    "timestamp": "2025-08-13T10:51:00.397Z",
+    "level": "warn",
+    "message": "High memory usage detected",
+    "resourceId": "monitoring",
+    "traceId": "abc-xyz-125",
+    "spanId": "span-458",
+    "commit": "5e5342h",
+    "metadata": {
+      "memoryUsage": "85%",
+      "threshold": "80%"
+    }
+  },
+  {
+    "id": "0119b7c0-0580-4c40-a0b0-08564d66f4c0",
+    "timestamp": "2025-08-14T10:51:00.431Z",
+    "level": "info",
+    "message": "web-server message",
+    "resourceId": "web-server",
+    "traceId": "abc-xyz-126",
+    "spanId": "span-459",
+    "commit": "5e5342i",
+    "metadata": {
+      "port": 3000,
+      "environment": "development",
+      "bulk": true
+    }
+  },
+  {
+    "id": "ebcad92a-455a-43a2-a9f7-2d62249ab061",
+    "timestamp": "2025-08-14T10:51:00.431Z",
+    "level": "debug",
+    "message": "web-server message",
+    "resourceId": "web-server",
+    "traceId": "abc-xyz-127",
+    "spanId": "span-450",
+    "commit": "5e5342j",
+    "metadata": {
+      "port": 3000,
+      "environment": "development",
+      "bulk": true
+    }
+  }
+]
