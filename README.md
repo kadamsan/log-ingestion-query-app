@@ -158,6 +158,47 @@ The frontend communicates with the backend through a clean API service layer:
 - **Health Checks**: Backend connectivity monitoring
 
 
+
+## 🐳 Docker Deployment
+
+The entire application can be deployed using Docker and Docker Compose for easy containerization and orchestration.
+
+
+### Access the Application
+
+- **Frontend**: http://localhost:80 (or http://localhost)
+- **Backend API**: http://localhost:3000
+- **Health Check**: http://localhost/health
+
+### Development with Docker
+
+
+### Docker Commands Reference
+
+```bash
+# Build images
+docker-compose build
+
+# Start services
+docker-compose up
+
+# Stop services
+docker-compose down
+
+# View service status
+docker-compose ps
+
+# View logs
+docker-compose logs [service-name]
+
+# Execute commands in containers
+docker-compose exec backend node test.js
+docker-compose exec frontend sh
+
+# Clean up
+docker-compose down -v --rmi all
+```
+
 ---
 
 **Note**: This implementation is designed for development, testing, and small-scale production use. For high-volume production systems, consider migrating to a dedicated database solution.
