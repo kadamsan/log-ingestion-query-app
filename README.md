@@ -65,7 +65,6 @@ The core database service provides:
 ### Environment Variables
 
 - `PORT`: Server port (default: 3000)
-- `NODE_ENV`: Environment (development, production)
 
 ### Rate Limiting
 
@@ -99,36 +98,10 @@ npm start
 
 A modern React application built with Vite for fast development and optimal performance. The frontend provides a clean, responsive interface for viewing and filtering log data.
 
-#### Features
-- **Modern React**: Built with React 18 and functional components
-- **Vite Build Tool**: Fast development server and optimized builds
-- **Responsive Design**: Works well on desktop browsers
-- **Real-time Filtering**: Dynamic log filtering with instant results
-- **Visual Log Levels**: Color-coded log entries for easy identification
-- **Pagination**: Efficient navigation through large log datasets
-- **Backend Integration**: Seamless communication with the JSON database backend
 
-#### Project Structure
-```
-frontend/
-├── src/
-│   ├── components/          # Reusable UI components
-│   │   ├── FilterBar.jsx    # Log filtering controls
-│   │   ├── LogEntry.jsx     # Individual log display
-│   │   └── Pagination.jsx   # Navigation controls
-│   ├── hooks/               # Custom React hooks
-│   │   └── useLogs.js       # Log state management
-│   ├── services/            # API communication
-│   │   └── api.js           # Backend API integration
-│   ├── App.jsx              # Main application component
-│   ├── main.jsx             # Application entry point
-│   └── index.css            # Global styles
-├── package.json             # Dependencies and scripts
-├── vite.config.js           # Vite configuration
-└── index.html               # HTML template
-```
+## 🚀 Quick Start
 
-#### Quick Start
+### Installation
 
 1. **Install dependencies:**
    ```bash
@@ -153,7 +126,7 @@ frontend/
 
 The frontend will be available at `http://localhost:3001`
 
-#### Key Components
+## Key Components
 
 **FilterBar**: Provides comprehensive filtering options including:
 - Text search in log messages
@@ -176,46 +149,13 @@ The frontend will be available at `http://localhost:3001`
 - Total count display
 - Efficient page number generation
 
-#### API Integration
+## API Integration
 
 The frontend communicates with the backend through a clean API service layer:
 - **Axios**: HTTP client for API requests
 - **Interceptors**: Request/response logging and error handling
 - **Proxy Configuration**: Development proxy to backend (localhost:3000)
 - **Health Checks**: Backend connectivity monitoring
-
-#### State Management
-
-Uses React hooks for state management:
-- **useState**: Component-level state
-- **useEffect**: Side effects and API calls
-- **useCallback**: Optimized function references
-- **Custom Hooks**: Reusable state logic (useLogs)
-
-#### Styling
-
-Modern CSS with:
-- **Responsive Grid**: Flexible layout system
-- **CSS Variables**: Consistent theming
-- **Hover Effects**: Interactive feedback
-- **Mobile Considerations**: Basic responsive design
-- **Visual Hierarchy**: Clear information organization
-
-#### Development Features
-
-- **Hot Reload**: Instant code updates during development
-- **ESLint**: Code quality and consistency
-- **Error Boundaries**: Graceful error handling
-- **Loading States**: User feedback during API calls
-- **Error Messages**: Clear error communication
-
-#### Browser Compatibility
-
-Designed for modern browsers with support for:
-- ES2020+ features
-- CSS Grid and Flexbox
-- Modern JavaScript APIs
-- React 18 features
 
 
 ---
